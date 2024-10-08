@@ -35,5 +35,20 @@ public class ComplexTest {
         g.minus(g);
         assertEquals(0.0, g.getRe(), 0.00001, "Real part after minus operation should be 0");
         assertEquals(0.0, g.getIm(), 0.00001, "Imaginary part after minus operation should be 0");
+
+    }
+    @Test
+    public void testDiv() {
+        Complex a = new Complex(5, 5);
+        Complex b = new Complex(1, 1);
+        Complex result = a.div(b);
+        assertEquals(5.0, result.getRe());
+        assertEquals(0.0, result.getIm());
+    }
+
+    @Test
+    public void testLengthSQ() {
+        Complex a = new Complex(3, 4);
+        assertEquals(25.0, a.lengthSQ());
     }
 }
